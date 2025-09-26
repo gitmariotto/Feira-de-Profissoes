@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Profest - Feira de Profissões 2025</title>
+  <style>
+    .programacao-titulo {
+        font-family: Georgia, serif;
+        font-size: 26px; /* aumenta o tamanho da fonte */
+        text-align: center; /* centraliza se quiser */
+        font-size: 40px;
+    }
+
+    table {
+        width: 90%;
+        margin: 40px auto;
+        border-collapse: collapse;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    table th {
+        background: #4a90e2;
+        color: white;
+        padding: 12px;
+        text-align: left;
+    }
+
+    table td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f5f9ff;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f6ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Cabeçalho branco com logo, links e perfil */
+    .top-header {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .top-header img.logo {
+      height: 100px;
+    }
+
+    .top-header img.perfil {
+      height: 50px;
+    }
+
+    .top-header .links {
+      text-align: center;
+      flex: 1;
+    }
+
+    .top-header .links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #4a90e2;
+      font-weight: bold;
+    }
+
+    .top-header .links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Banner principal */
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Seção com imagem de fundo e texto por cima (Termos Importantes) */
+    .terms-section {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .terms-section .background-img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    .terms-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    .terms-text h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .terms-text p {
+      font-size: 1.3em;
+      margin: 5px 0;
+    }
+
+    /* Outras seções */
+    section {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+      text-align: center;
+    }
+
+    /* Tabela */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th {
+      background-color: #4a90e2;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #eaf2ff;
+    }
+
+    table tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #4a90e2;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dicas de carreira */
+    .career-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .career-image img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .career-text {
+      max-width: 600px;
+      font-size: 25px;
+      line-height: 1.5;
+    }
+
+    .career-text h2 {
+      text-align: left;
+    }
+
+    .career-text ol {
+      padding-left: 20px;
+    }
+
+    /* Seção Profissões estilo lista ordenada */
+    .professions-section {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 40px auto;
+      width: 80%;
+    }
+
+    .prof-card {
+      background-color: #64b5f6; /* azul claro */
+      color: black;
+      padding: 30px;
+      border-radius: 60% 40% 50% 30% / 30% 50% 40% 60%;
+      width: 300px;
+      min-height: 250px;
+      font-family: "Georgia", serif;
+    }
+
+    .prof-card h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .prof-card ol {
+      padding-left: 20px;
+      font-size: 18px;
+    }
+
+    .prof-card ol ol {
+      padding-left: 25px;
+      font-size: 16px;
+    }
+
+    /* Tabela menor */
+    .programacao-table {
+      width: 90%;
+      margin: auto;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho Branco -->
+  <div class="top-header">
+    <img src="https://i.imgur.com/wJ7F0jA.png" alt="Logo" class="logo">
+    <div class="links">
+      <a href="#programacao">Programação</a>
+      <a href="https://uniexpo.com.br/" target="_blank">Guia do Estudante</a>
+      <a href="file:///C:/Users/Aluno/Downloads/PDF%20profest.pdf" download>Baixar Programa Oficial</a>
+    </div>
+    <img src="https://i.imgur.com/eYtNZhT.png" alt="Perfil" class="perfil">
+  </div>
+
+  <!-- Banner principal -->
+  <div class="banner">
+    <img src="https://i.imgur.com/n5jCY64.png" alt="Banner Profest">
+  </div>
+
+  <!-- Seção Termos sobre imagem -->
+  <section class="terms-section">
+    <img src="https://i.imgur.com/KfqtA3L.png" alt="Imagem de fundo Termos" class="background-img">
+    <div class="terms-text">
+      <h2>Termos Importantes</h2>
+      <p>Hard Skills: Habilidades técnicas específicas</p>
+      <p>Soft Skills: Habilidades interpessoais e comportamentais</p>
+    </div>
+  </section>
+
+  <!-- Seção Dicas com imagem ao lado -->
+  <section class="career-tips">
+    <div class="career-container">
+      <div class="career-image">
+        <img src="https://i.imgur.com/GH8RMU7.png" alt="Imagem Dicas Carreira">
+      </div>
+      <div class="career-text">
+        <h2>Dicas para escolher uma carreira</h2>
+        <ol>
+          <li>Conheça seus interesses</li>
+          <li>Pesquise sobre o mercado</li>
+          <li>Converse com profissionais</li>
+          <li>Participe de palestras e feiras</li>
+          <li>Confie no seu potencial</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+ <!-- Seção Profissões -->
+<section class="professions-section">
+    <div class="prof-card">
+      <h2>Profissões em destaque:</h2>
+      <ul>
+        <li>Medicina</li>
+        <li>Engenharia</li>
+        <li>Advocacia</li>
+        <li>Arquitetura</li>
+        <li>Técnico de Informática</li>
+      </ul>
+    </div>
+  
+    <div class="prof-card">
+      <h2>Profissões por área:</h2>
+      <ol>
+        <li>Saúde
+          <ol type="a">
+            <li>Enfermagem</li>
+            <li>Pediatria</li>
+          </ol>
+        </li>
+        <li>Tecnologia
+          <ol type="a">
+            <li>Designer</li>
+            <li>Analista de Sistemas</li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+  </section>
+  
+
+  <!-- Seção Programação -->
+  <section id="programacao">
+    <h2 class="programacao-titulo">Programação</h2>
+
+  
+    <table class="programacao-table">
+      <tr>
+        <th>Palestra</th>
+        <th>Profissional</th>
+        <th>Horário</th>
+      </tr>
+      <tr>
+        <td>Explorando o Futuro: Introdução às Carreiras</td>
+        <td>Orientador Profissional</td>
+        <td>10:00</td>
+      </tr>
+      <tr>
+        <td>Soft Skills e Hard Skills: O que o Mercado Procura</td>
+        <td>Gestão de Recursos Humanos</td>
+        <td>11:00</td>
+      </tr>
+      <tr>
+        <td>Carreiras Sustentáveis: O Futuro Verde das Profissões</td>
+        <td>Engenheiro Ambiental / Biólogo</td>
+        <td>13:00</td>
+      </tr>
+      <tr>
+        <td>Tecnologia em Ascensão: Profissões do Amanhã</td>
+        <td>Engenheiro de Software</td>
+        <td>14:00</td>
+      </tr>
+      <tr>
+        <td>Mercado em Transformação: Carreiras em Alta</td>
+        <td>Analista de Mercado</td>
+        <td>15:00</td>
+      </tr>
+    </table>    
+  </section>
+
+<!-- Rodapé -->
+<footer style="background-color: #ffffff; color: #00305a; padding: 10px 20px; display: flex; justify-content: space-between; flex-wrap: wrap;">
+    <!-- Coluna esquerda: imagem + texto institucional -->
+    <div style="max-width: 500px; margin-bottom: 20px;">
+      <img src="https://i.imgur.com/uvrojqm.png" alt="Logo Profest" style="width: 100px; margin-bottom: 15px;">
+      <p style="margin: 0; line-height: 1.5;">
+        A Profest é uma faculdade feita pra você. Há mais de 25 anos conectando conhecimentos, inovações e novas oportunidades. 
+        Acreditamos que a educação transforma vidas e contribui para um futuro melhor.
+      </p>
+    </div>
+  
+ <!-- Coluna central: acesso rápido -->
+ <div style="margin: 0 auto 20px; text-align: center;">
+    <h3 style="margin-top: 0; margin-bottom: 10px;">Acesso Rápido</h3>
+    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+      <li><a href="#programacao" style="color:#00305a; text-decoration: underline;">Agenda de Eventos</a></li>
+      <li><a href="#quem-somos" style="color: #00305a ; text-decoration: underline;">Quem Somos</a></li>
+      <li><a href="#profest-colégio" style="color: #00305a ; text-decoration: underline;">Profest no Seu Colégio</a></li>
+      <li><a href="#blog" style="color:#00305a ; text-decoration: underline;">Blog</a></li>
+      <li><a href="#contatos" style="color:#00305a ; text-decoration: underline;">Contatos</a></li>
+    </ul>
+  </div>
+
+  <!-- Coluna direita: fale conosco -->
+  <div style="max-width: 250px; margin-bottom: 20px;">
+    <h3 style="margin-top: 0; margin-bottom: 10px;">Fale Conosco</h3>
+    <p style="margin: 5px 0;">Whatsapp: (12) 99118-5638</p>
+    <p style="margin: 5px 0;">E-mail: <a href="mailto:profest@hotmail.com" style="color: #00305a ; text-decoration: underline;">profest@hotmail.com</a></p>
+    <p style="margin: 5px 0;">Instagram: <a href="https://www.instagram.com/profest" target="_blank" style="color:#00305a ; text-decoration: underline;">@profest</a></p>
+  </div>
+
+</footer>
+  
+</body>
+</html>
+
